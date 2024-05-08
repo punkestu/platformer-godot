@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8mctpllmpin2"]
+
+[ext_resource type="Script" path="res://levels/spawner.gd" id="1_mubiq"]
+[ext_resource type="PackedScene" uid="uid://b0uvacltrovvi" path="res://objects/movable/pig.tscn" id="2_fndyl"]
+
+[node name="Marker2D" type="Marker2D"]
+script = ExtResource("1_mubiq")
+enemy = ExtResource("2_fndyl")
+dir = -1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
